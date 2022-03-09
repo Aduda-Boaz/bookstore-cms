@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 function Nav() {
   return (
-    <navbar className="Navbar">
+    <header className="Navbar">
       <nav className='Nav-header'>
       <h1 className="Nav-logo">
           <NavLink to="/bookstore/" rel="noopener noreferrer">
@@ -17,13 +17,13 @@ function Nav() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Categories/" rel="noopener noreferrer">
+            <NavLink to="/categories/" rel="noopener noreferrer">
               Categories
             </NavLink>
           </li>
         </ul>
       </nav>
-    </navbar>
+    </header>
   );
 }
 
