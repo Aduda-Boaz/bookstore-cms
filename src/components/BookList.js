@@ -18,8 +18,6 @@ function BookList() {
         </div>
       </div>
       <div className="Progress">
-        <div className="progressBar">
-        </div>
         <p>Current Chapter</p>
         <p>Chapter 17</p>
         <button type="button" className="progressBtn btn">Update Book</button>

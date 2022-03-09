@@ -7,13 +7,13 @@ import BookCategories from './components/BookCategory';
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Nav />
       <Routes>
-        <Route path='bookstore' element={<BookDisplay />} />
-        <Route path='categories' element={<BookCategories />} />
+        <Route path="bookstore" element={<BookDisplay />} />
+        <Route path="categories" element={<BookCategories />} />
       </Routes>
-    </div>    
+    </div>
   );
 }
 
