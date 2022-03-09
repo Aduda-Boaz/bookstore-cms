@@ -1,6 +1,8 @@
 # Project Name
+React Bookstore
 
-> Description the project.
+> The Bookstore is a single page webapp that allows users to Display a list of books, Add a book and
+Remove a selected book..
 
 ## Built With
 
