@@ -5,7 +5,7 @@ function Nav() {
   return (
     <header className="Navbar">
       <nav className="Nav-header">
-      <h1 className="Nav-logo">
+        <h1 className="Nav-logo">
           <NavLink to="/bookstore/" rel="noopener noreferrer">
             Bookstore CMS
           </NavLink>

@@ -12,14 +12,14 @@ function BookList() {
         <button type="button" className="btn">Edit</button>
       </div>
       <div className="Scale">
-        <div className="GraphContainer" />
-          <div className="Graph">
-            <p className="percentage">64%</p>
-            <p className="completed">Completed</p>
-          </div>
+        <div className="Graph">
+          <p className="percentage">64%</p>
+          <p className="completed">Completed</p>
         </div>
+      </div>
       <div className="Progress">
-        <div className="progressBar" />
+        <div className="progressBar">
+        </div>
         <p>Current Chapter</p>
         <p>Chapter 17</p>
         <button type="button" className="progressBtn btn">Update Book</button>
