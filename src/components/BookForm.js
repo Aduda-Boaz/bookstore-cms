@@ -4,6 +4,7 @@ function BookForm() {
   return (
     <div>
       <form className="add-new">
+        <h4>Add new book</h4>
         <label htmlFor="Title">
           <input id="Title" placeholder="Title" required />
         </label>
