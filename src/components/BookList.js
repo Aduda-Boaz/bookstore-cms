@@ -1,14 +1,26 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { removeBook } from '../redux/books/books';
 
-function BookList() {
+function BookList(props) {
+  const {
+    id,
+    title,
+    author,
+    category,
+  } = props;
+  const dispatch = useDispatch();
+  const remove = () => dispatch(removeBook(id));
+
   return (
     <div className="List-container">
       <div className="BookDetils">
-        <p className="Genre">Category</p>
-        <p className="BookTitle">Title</p>
-        <p className="BookAuthor">Author</p>
+        <p className="Genre" value={category}>{category}</p>
+        <p className="BookTitle">{title}</p>
+        <p className="BookAuthor">{author}</p>
         <button type="button" className="btn">Comment</button>
-        <button type="button" className="btn">Remove</button>
+        <button type="button" className="btn" onClick={remove}>Remove</button>
         <button type="button" className="btn">Edit</button>
       </div>
       <div className="Scale">

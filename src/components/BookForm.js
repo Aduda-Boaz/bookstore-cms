@@ -13,7 +13,7 @@ function BookForm() {
   const getAuthor = (event) => setAuthor(event.target.value);
   const getCategory = (event) => setCategory(event.target.value);
 
-  const addBookStore = (title, author) => {
+  const submitBookToStore = (title, author) => {
     const newBook = {
       id: uuidv4(),
       title,
@@ -45,7 +45,7 @@ function BookForm() {
             <option value="Romance">Romance</option>
           </select>
         </label>
-        <button type="submit" className="add-book" onClick={() => addBookStore(title, author)}>Add</button>
+        <button type="submit" className="add-book" onClick={() => submitBookToStore(title, author)}>Add</button>
       </form>
     </div>
   );
