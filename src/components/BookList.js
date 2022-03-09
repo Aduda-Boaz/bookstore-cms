@@ -20,7 +20,7 @@ function BookList() {
       <div className="Progress">
         <p>Current Chapter</p>
         <p>Chapter 17</p>
-        <button type="button" className="progressBtn btn">Update Book</button>
+        <button type="button" className="progressBtn">Update Book</button>
       </div>
     </div>
   );
