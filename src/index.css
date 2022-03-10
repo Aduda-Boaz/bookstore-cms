@@ -41,6 +41,11 @@
   border-radius: 0.3rem;
 }
 
+.btn {
+  border: none;
+  background: none;
+}
+
 .progressBtn {
   background-color: #3487e7;
   color: white;
