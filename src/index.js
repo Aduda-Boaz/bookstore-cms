@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import './index.css';
 import BookDisplay from './components/BookDisplay';
 import Nav from './components/NavBar';
 import BookCategories from './components/BookCategory';
 import store from './redux/configureStore';
-import { Provider } from 'react-redux';
 
 ReactDOM.render(
   <React.StrictMode>
