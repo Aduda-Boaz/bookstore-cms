@@ -1,54 +1,54 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 
-function BookForm() {
+const categories = ['Action', 'Science-fiction', 'Business', 'Romance'];
+
+const BookForm = () => {
+  const books = useSelector((state) => state.booksReducer);
   const dispatch = useDispatch();
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('');
-
-  const getTitle = (event) => setTitle(event.target.value);
-  const getAuthor = (event) => setAuthor(event.target.value);
-  const getCategory = (event) => setCategory(event.target.value);
-
-  const submitBookToStore = (title, author) => {
-    const newBook = {
-      id: uuidv4(),
-      title,
-      author,
-      category,
-    };
-
-    dispatch(addBook(newBook));
-    setTitle('');
-    setAuthor('');
+  const submitBookToStore = (event) => {
+    event.preventDefault();
+    if (event.target.parentNode.lastChild[0].value && event.target.parentNode.lastChild[1].value 
+      && event.target.parentNode.lastChild[2].value) {
+      const newBook = {
+        id: uuidv4(),
+        title: event.target.parentNode.lastChild[0].value,
+        author: event.target.parentNode.lastChild[1].value,
+        category: event.target.parentNode.lastChild[2].value,
+      };
+      dispatch(addBook(newBook));
+      event.target.parentNode.lastChild[0].value = '';
+      event.target.parentNode.lastChild[1].value = '';
+    }
   };
 
   return (
-    <div>
-      <form className="add-new">
-        <h4>Add new book</h4>
-        <label htmlFor="Title">
-          <input id="Title" placeholder="Book Title" onChange={getTitle} value={title} required />
-        </label>
-        <label htmlFor="Title">
-          <input id="Author" placeholder="Book Author" onChange={getAuthor} value={author} required />
-        </label>
-        <label htmlFor="genre">
-          <select className="book-selection" id="genre" onChange={getCategory} value={category} required>
-            <option value="Unknown">Genre</option>
-            <option value="Leadership">Leadership</option>
-            <option value="Science-Fiction">Science-Fiction</option>
-            <option value="Business">Business</option>
-            <option value="Romance">Romance</option>
-          </select>
-        </label>
-        <button type="submit" className="add-book" onClick={() => submitBookToStore(title, author)}>Add</button>
+    <>
+      <h3 className='add-new'>Add newbook</h3>
+      <form className='form-container' onSubmit={submitBookToStore}>
+      <input
+          type="text"
+          placeholder="Book title"
+          name="title"
+          value={books.title}
+        />
+        <input
+          type="text"
+          placeholder="Book author"
+          name="author"
+          value={books.author}
+        />
+        <select placeholder="Category" name="category">
+          {categories.map((category) => (
+            <option key={uuidv4()} value={category}>{category}</option>
+          ))}
+        </select>
+        <input type="submit" className="submit" value="add-book" />
       </form>
-    </div>
+    </>
   );
-}
+};
 
 export default BookForm;
