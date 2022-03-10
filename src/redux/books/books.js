@@ -17,10 +17,10 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, action.payload];
-      case REMOVE_BOOKS:
-        return state.filter((book) => book.id !== action.payload);
-        default:
-          return state;
+    case REMOVE_BOOKS:
+      return state.filter((book) => book.id !== action.payload);
+    default:
+      return state;
   }
 };
 

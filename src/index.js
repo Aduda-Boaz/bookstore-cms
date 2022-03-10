@@ -14,12 +14,11 @@ ReactDOM.render(
       <BrowserRouter>
         <Nav />
         <Routes>
-        <Route path="bookstore" element={<BookDisplay />} />
-        <Route path="categories" element={<BookCategories />} />
-      </Routes>
+          <Route path="bookstore" element={<BookDisplay />} />
+          <Route path="categories" element={<BookCategories />} />
+        </Routes>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
-
