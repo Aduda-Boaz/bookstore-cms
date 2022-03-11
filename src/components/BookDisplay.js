@@ -7,8 +7,8 @@ const BookDisplay = () => {
   const books = useSelector((state) => state.booksReducer);
 
   return (
-    <div className="bookdisplay">
-      <ul>
+    <div>
+      <ul className="book-display">
         {books.map((book) => (
           <BookList
             key={book.id}

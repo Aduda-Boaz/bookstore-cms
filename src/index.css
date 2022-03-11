@@ -41,6 +41,15 @@
   border-radius: 0.3rem;
 }
 
+.book-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.938rem;
+  padding-top: 2.375rem;
+  margin: 0 auto 2.5rem;
+  width: 85%;
+}
+
 .btn {
   border: none;
   background: none;
