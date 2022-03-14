@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import BookForm from './BookForm';
 import BookList from './BookList';
+import { fetchBooks } from '../redux/books/books';
 
 const BookDisplay = () => {
   const books = useSelector((state) => state.booksReducer);
+  useEffect(() => {
+    fetchBooks();
+  }, [books]);
 
   return (
     <div>
@@ -13,8 +17,8 @@ const BookDisplay = () => {
           <BookList
             key={book.id}
             id={book.id}
-            title={book.title}
-            author={book.author}
+            title={book.title.title}
+            author={book.title.author}
             category={book.category}
           />
         ))}
