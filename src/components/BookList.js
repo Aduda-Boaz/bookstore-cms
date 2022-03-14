@@ -1,4 +1,8 @@
 import React from 'react';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+
+const percentage = 67;
 
 function BookList() {
   return (
@@ -13,7 +17,10 @@ function BookList() {
       </div>
       <div className="Scale">
         <div className="Graph">
-          <p className="percentage">64%</p>
+          <div className="progressBar" style={{ width: 50, height: 50 }}>
+            <CircularProgressbar value={67} />
+            <p className="percentage">67%</p>
+          </div>
           <p className="completed">Completed</p>
         </div>
       </div>

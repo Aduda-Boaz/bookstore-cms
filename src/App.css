@@ -41,6 +41,14 @@
   border-radius: 0.3rem;
 }
 
+.progressBar {
+  display: flex;
+}
+
+.percentage {
+  margin-left: 5px;
+}
+
 .progressBtn {
   background-color: #3487e7;
   color: white;
